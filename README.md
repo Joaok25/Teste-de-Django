@@ -32,6 +32,5 @@ python -m venv .venv
 
 Ative o ambiente:
 Windows (PowerShell):
-```Terminal
 .venv\Scripts\activate
 
