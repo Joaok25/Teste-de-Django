@@ -34,3 +34,24 @@ Ative o ambiente:
 Windows (PowerShell):
 .venv\Scripts\activate
 
+
+### **2. Instalar dependências**
+pip install -U pip
+pip install -r requirements.txt
+
+
+## **3. Configurar o banco de dados**
+python manage.py makemigrations
+python manage.py migrate
+
+
+### **4. Criar superusuário**
+
+python manage.py createsuperuser
+Use este usuário para acessar /admin.
+
+### **5. Rodar o servidor local**
+python manage.py runserver
+Acesse:
+http://127.0.0.1:8000/ – Tela principal.
+http://127.0.0.1:8000/admin – Painel Admin
