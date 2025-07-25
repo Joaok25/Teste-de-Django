@@ -34,3 +34,6 @@ Ative o ambiente:
 Windows (PowerShell):
 .venv\Scripts\activate
 
+### **2. Instalar dependências
+pip install -U pip
+pip install -r requirements.txt
