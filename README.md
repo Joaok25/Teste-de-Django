@@ -35,31 +35,3 @@ Windows (PowerShell):
 ```Terminal
 .venv\Scripts\activate
 
-###**2. Instalar dependências
-```Terminal
-pip install -U pip
-pip install -r requirements.txt
-
-###**3. Configurar o banco de dados
-```Terminal
-python manage.py makemigrations
-python manage.py migrate
-
-
-###**4. Criar superusuário
-```Terminal
-python manage.py createsuperuser
-
-Use este usuário para acessar /admin.
-
-###*5. Rodar o servidor local
-```Terminal
-python manage.py runserver
-Acesse:
-http://127.0.0.1:8000/ – Tela principal.
-http://127.0.0.1:8000/admin – Painel Admin.
-
-Observações
-As últimas 10 operações de cada usuário são exibidas ao lado da calculadora.
-O projeto pode ser facilmente estendido para adicionar novas funcionalidades, como operações avançadas (potência, raiz quadrada etc.).
-
