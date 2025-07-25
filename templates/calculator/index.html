@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Calculator{% endblock %}
+{% block content %}
+<h2>Calculator</h2>
+<div style="display:flex; gap:2rem; align-items:flex-start; flex-wrap: wrap;">
+  <section style="flex:1 1 320px;">
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Calcular</button>
+    </form>
+  </section>
+  <aside style="flex:1 1 320px;">
+    <h3>Latest calculations</h3>
+    <ul>
+      {% for op in latest_ops %}
+        <li> {{ op.expression }} = {{ op.result }}</li>
+      {% empty %}
+        <li>Nenhuma operação ainda.</li>
+      {% endfor %}
+    </ul>
+  </aside>
+</div>
+{% endblock %}

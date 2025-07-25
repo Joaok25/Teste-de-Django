@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Advanced Calculator{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+  <nav class="container">
+    <ul><li><strong>Advanced Calculator</strong></li></ul>
+    <ul>
+      {% if user.is_authenticated %}
+        <li>Olá, {{ user.username }}</li>
+        <li><a href="{% url 'logout' %}">Sair</a></li>
+      {% else %}
+        <li><a href="{% url 'login' %}">Entrar</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  <main class="container">
+    {% for message in messages %}
+      <article class="{{ message.tags }}">{{ message }}</article>
+    {% endfor %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
